@@ -8,12 +8,20 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 <!doctype html>
 <html lang="ja">
   <head>
-    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+    <BaseHead title={`${SITE_TITLE} - Homepage`} description={SITE_DESCRIPTION} />
   </head>
   <body>
     <Header />
     <main>
-      <Footer />
+      <div class="image-slider">
+        <img src="/assets/art1.jpeg" alt="art1" />
+        <img src="/assets/art2.jpeg" alt="art2" />
+        <img src="/assets/art3.jpeg" alt="art3" />
+      </div>
     </main>
+    <Footer />
   </body>
 </html>
+
+<style>
+</style>
