@@ -1,0 +1,20 @@
+---
+type Props = {
+  motifName: string;
+  Date: string;
+  image: string;
+};
+
+const { motifName, Date, image } = Astro.props;
+---
+
+<div class="illust-container">
+  <img src={image} alt={motifName} />
+  <h5>名前：{motifName}</h5>
+  <p>作成日：{Date}</p>
+</div>
+
+<style>
+  .illust-container {
+  }
+</style>
