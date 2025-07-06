@@ -1,0 +1,87 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import IllustContainer from "../components/illust/IllustContainer.astro";
+import { SITE_TITLE } from "../consts";
+
+type Props = {
+  title: string;
+  description: string;
+  heroImage: string;
+};
+
+const { title, description, heroImage } = Astro.props;
+---
+
+<!doctype html>
+<html lang="ja">
+  <head>
+    <BaseHead title={`${title} - ${SITE_TITLE}`} description={description} />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <div class="hero-container">
+        <img src={heroImage} alt={`${title}ロゴ`} class="hero-image" />
+        <div class="hero-content">
+          <h3>{title}イラスト</h3>
+          <h6>{description}をモチーフにしたイラスト作品です。</h6>
+        </div>
+      </div>
+      <div class="illust-container">
+        <slot />
+        <!-- ここにページ内容が入る-->
+      </div>
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  main {
+    width: 100%;
+    margin-top: 80px;
+    padding: 2rem; /* Headerの高さ分のマージン */
+  }
+
+  .hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .hero-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .hero-image {
+    width: 230px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  h6 {
+    font-size: 0.8rem;
+  }
+
+  .illust-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    grid-column-gap: 2rem;
+    grid-row-gap: 2rem;
+  }
+</style>
