@@ -2,6 +2,7 @@
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
 import DropDownMenu from "./DropDownMenu.astro";
+import SocialLinks from "./Social-Links.astro";
 ---
 
 <header>
@@ -26,7 +27,7 @@ import DropDownMenu from "./DropDownMenu.astro";
             />
             <DropDownMenu
               href="/illustration/Hololive"
-              image="/assets/HoroLive-Logo.jpg"
+              image="/assets/HoloLive-Logo.jpg"
               title="ホロライブ"
             />
             <DropDownMenu
@@ -44,16 +45,22 @@ import DropDownMenu from "./DropDownMenu.astro";
         <HeaderLink href="/jobRequest">お仕事依頼</HeaderLink>
         <HeaderLink href="/contact">お問い合わせ</HeaderLink>
       </div>
-      <div class="social-links">
-        <a href="https://www.twitch.tv/nek_0x" target="_blank">
-          <img class="social-icon" src="/assets/Twitch-icon.png" alt="Twitch" />
-        </a>
-        <a href="https://x.com/miy_nyank" target="_blank">
-          <img class="social-icon" src="/assets/X-icon.avif" alt="X" />
-        </a>
-        <a href="https://skima.jp/profile?id=141176" target="_blank">
-          <img class="social-icon" src="/assets/SKIMA-icon.jpg" alt="SKIMA" />
-        </a>
+      <div class="social-Links-container">
+        <SocialLinks
+          href="https://www.twitch.tv/nek_0x"
+          src="/assets/Twitch-icon.png"
+          alt="Twitch"
+        />
+        <SocialLinks
+          href="https://x.com/miy_nyank"
+          src="/assets/X-icon.avif"
+          alt="X"
+        />
+        <SocialLinks
+          href="https://skima.jp/profile?id=141176"
+          src="/assets/SKIMA-icon.jpg"
+          alt="SKIMA"
+        />
       </div>
     </div>
   </nav>
@@ -152,9 +159,9 @@ import DropDownMenu from "./DropDownMenu.astro";
     border: 1px solid #ddd;
   }
 
-  .social-links,
-  .social-links a {
+  .social-Links-container {
     display: flex;
+    justify-content: center;
     align-items: center;
     gap: 0.5rem;
   }

@@ -1,0 +1,29 @@
+---
+type Props = {
+  href: string;
+  src: string;
+  alt: string;
+};
+
+const { href, src, alt }: Props = Astro.props;
+---
+
+<div class="social-links">
+  <a href={href} target="_blank">
+    <img class="social-icon" src={src} alt={alt} />
+  </a>
+</div>
+
+<style>
+  .social-icon {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+
+  .social-icon:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s ease;
+  }
+</style>
